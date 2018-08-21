@@ -8,6 +8,5 @@ Pod::Spec.new do |s|
   s.author       = { "AndrewLeeCHCH" => "1650091775@qq.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/AndrewLeeCHCH/MiniGalleryUIPod.git", :tag => "#{s.version}" }
-  s.swift_version = "4.2"
   s.source_files  = "MGUIPod/**/*.{h,m,swift}"
 end
