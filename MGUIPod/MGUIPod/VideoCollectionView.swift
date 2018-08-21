@@ -15,9 +15,9 @@ public final class VideoCollectionView: UICollectionView, MGCollectionView {
   
   weak public var eventDelegate: MGCollectionViewDelegate?
   
-  private let cellId = "cellId"
+  internal let cellId = "cellId"
   
-  private var urls: [URL] = [] {
+  internal var urls: [URL] = [] {
     didSet {
       DispatchQueue.main.async {
         self.reloadData()
@@ -25,7 +25,7 @@ public final class VideoCollectionView: UICollectionView, MGCollectionView {
     }
   }
   
-  private var indexPathBeforeChangingOrientation: IndexPath?
+  internal var indexPathBeforeChangingOrientation: IndexPath?
   
   // MARK: -Lifecycle
   
@@ -77,7 +77,7 @@ public final class VideoCollectionView: UICollectionView, MGCollectionView {
   
   // MARK: -Helper
   
-  private func calculateCurrentIndex() -> Int {
+  internal func calculateCurrentIndex() -> Int {
     var index = Int(floor(contentOffset.x / UIScreen.main.bounds.width))
     index = index < 0 ? 0 : index >= urls.count ? urls.count - 1 : index
     return index

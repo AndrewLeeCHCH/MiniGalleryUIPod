@@ -68,23 +68,23 @@ final class VideoCell: UICollectionViewCell {
   
   // MARK: - Listeners
   
-  @objc private func playerItemDidReachEnd(notification: Notification) {
+  @objc internal func playerItemDidReachEnd(notification: Notification) {
     if let item = notification.object as? AVPlayerItem {
       item.seek(to: kCMTimeZero, completionHandler: nil)
     }
   }
 
-  func stopPlaying() {
+  internal func stopPlaying() {
     player?.pause()
   }
   
-  func startPlaying() {
+  internal func startPlaying() {
     player?.play()
   }
   
   // MARK: - Helper
   
-  private func changePlayerLayerFrame() {
+  internal func changePlayerLayerFrame() {
     if UIDevice.current.orientation.isLandscape {
       playerLayer?.frame = CGRect(x: bounds.midX - 50, y: 20, width: 100, height: 100)
     } else if UIDevice.current.orientation.isPortrait {

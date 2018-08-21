@@ -14,7 +14,7 @@ final public class ImageCollectionView: UICollectionView, MGCollectionView {
   
   weak public var eventDelegate: MGCollectionViewDelegate?
   
-  private var images: [Any] = [] {
+  internal var images: [Any] = [] {
     didSet {
       DispatchQueue.main.async {
         self.reloadData()
@@ -26,9 +26,9 @@ final public class ImageCollectionView: UICollectionView, MGCollectionView {
     }
   }
   
-  private let cellId = "cellId"
+  internal let cellId = "cellId"
   
-  private var indexPathBeforeChangingOrientation: IndexPath?
+  internal var indexPathBeforeChangingOrientation: IndexPath?
 
   // MARK: - Lifecycle
   
@@ -80,7 +80,7 @@ final public class ImageCollectionView: UICollectionView, MGCollectionView {
  
   // MARK: - View Animation
   
-  private func zoomInZoomOutAnimation(_ item: Int) {
+  internal func zoomInZoomOutAnimation(_ item: Int) {
     var animations: (() -> Void)?
     
     if let cell = cellForItem(at: IndexPath(item: item, section: 0)) {
@@ -111,7 +111,7 @@ final public class ImageCollectionView: UICollectionView, MGCollectionView {
   
   // MARK: - Helper
   
-  private func calculateCurrentIndex() -> Int {
+  internal func calculateCurrentIndex() -> Int {
     var index = Int(floor(contentOffset.x * 3 / UIScreen.main.bounds.width))
     index = index < 0 ? 0 : index >= images.count ? images.count - 1 : index
     return index
