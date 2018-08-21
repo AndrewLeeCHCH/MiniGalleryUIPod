@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MGUIPod"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "This is UIPod for Project MiniGallery"
   s.description  = "Create ui-related things for project MiniGallery."
   s.homepage     = "https://github.com/AndrewLeeCHCH/MiniGalleryUIPod"
