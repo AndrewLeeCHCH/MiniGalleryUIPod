@@ -86,7 +86,7 @@ final public class ImageCollectionView: UICollectionView, MGCollectionView {
     if let cell = cellForItem(at: IndexPath(item: item, section: 0)) {
       animations = {
         cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        self.visibleCells.filter { visibleCell in
+        _ = self.visibleCells.filter { visibleCell in
           visibleCell != cell
           }.map {
             $0.transform = .identity
