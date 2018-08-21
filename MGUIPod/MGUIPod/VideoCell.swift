@@ -9,30 +9,22 @@
 import UIKit
 import AVFoundation
 
-final class VideoCell: UICollectionViewCell {
+final internal class VideoCell: UICollectionViewCell {
   
   // MARK: - Variables
   
-  var url: URL? {
+  internal var url: URL? {
     didSet {
       if let url = url {
         DispatchQueue.main.async {
           self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
         }
       }
-//      NetworkManager.shared.getVideoURLFrom(videoUrlString) { url in
-//        // Make sure url should be the same as current videoUrlString
-//        if let _ = url.absoluteString.range(of: self.videoUrlString.split(separator: "/")[3]) {
-//          DispatchQueue.main.async {
-//            self.player?.replaceCurrentItem(with: AVPlayerItem(url: url))
-//          }
-//        }
-//      }
     }
   }
   
-  var player: AVPlayer?
-  var playerLayer: AVPlayerLayer?
+  internal var player: AVPlayer?
+  internal var playerLayer: AVPlayerLayer?
   
   // MARK: - Lifecycle
   

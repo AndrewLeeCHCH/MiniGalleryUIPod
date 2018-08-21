@@ -8,13 +8,11 @@
 
 import UIKit
 
-final class ImageCell: UICollectionViewCell {
-
-  // MARK: - Constants
+final internal class ImageCell: UICollectionViewCell {
   
   // MARK: - Variables
   
-  var image: UIImage? {
+  internal var image: UIImage? {
     didSet {
       DispatchQueue.main.async {
         self.imageView.image = self.image
@@ -22,7 +20,7 @@ final class ImageCell: UICollectionViewCell {
     }
   }
   
-  var imageUrlString: String? {
+  internal var imageUrlString: String? {
     didSet {
       if let imageUrlString = imageUrlString, let imageUrl = URL(string: imageUrlString) {
         URLSession.shared.dataTask(with: imageUrl) { data, response, error in
@@ -36,13 +34,13 @@ final class ImageCell: UICollectionViewCell {
     }
   }
   
-  let imageView = UIImageView()
-  
   // MARK: - View Components
+  
+  internal let imageView = UIImageView()
 
   // MARK: - Lifecycle
   
-  override init(frame: CGRect) {
+  override internal init(frame: CGRect) {
     super.init(frame: frame)
     
     [imageView].forEach {

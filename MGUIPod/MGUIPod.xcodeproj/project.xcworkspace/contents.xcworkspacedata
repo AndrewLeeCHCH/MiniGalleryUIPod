@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MiniGalleryUIPod.xcodeproj">
+      location = "self:MGUIPod.xcodeproj">
    </FileRef>
 </Workspace>
